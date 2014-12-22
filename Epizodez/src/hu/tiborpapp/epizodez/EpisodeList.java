@@ -97,7 +97,6 @@ public class EpisodeList extends ListActivity {
 		    	{
 		    		db.execSQL("INSERT INTO shows VALUES('"+showTitle.replace("'","")+"','"+epTitle.replace("'","")+"');");
 		    		showMessage("Success!", "Record added!");
-//		    		clearText();
 		    	}				
 			}
 		});
