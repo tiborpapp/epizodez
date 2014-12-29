@@ -23,9 +23,6 @@ public class ServiceHandler {
 	public final static int GET = 1;
 	public final static int POST = 2;
 
-	public ServiceHandler() {
-	}
-
 	/**
 	 * 
 	 * @param url - URL to make request

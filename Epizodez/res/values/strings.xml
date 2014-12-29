@@ -4,6 +4,6 @@
     <string name="app_name">Epizodez</string>
     <string name="autoCompText">Please enter show title here</string>
     <string name="search">Search</string>
-    <string name="favorites">Seen</string>
+    <string name="favorites">Episodes Seen</string>
 
 </resources>

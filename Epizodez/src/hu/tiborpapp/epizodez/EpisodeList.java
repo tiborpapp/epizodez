@@ -57,7 +57,7 @@ public class EpisodeList extends ListActivity {
 	private static final String XML_EPNO = "seasonnum";
 	
 	private ProgressDialog pDialog;
-	private Button btnStart, btnViewAll;
+	private Button btnStart, btnSelectAll;
 	private TextView lblShowName;
 	
 	@Override
@@ -65,13 +65,13 @@ public class EpisodeList extends ListActivity {
 		super.onCreate(savedInstanceState);
 	    setContentView(R.layout.eplist);
 
-		Intent i = getIntent();
-		
         db=openOrCreateDatabase("ShowsDB", Context.MODE_PRIVATE, null);
 		db.execSQL("CREATE TABLE IF NOT EXISTS shows(showname VARCHAR, epname VARCHAR);");
-		
+	    
+		Intent i = getIntent();
+			
 		btnStart = (Button) findViewById(R.id.btnStart);	
-		btnViewAll = (Button) findViewById(R.id.btnViewAll);
+		btnSelectAll = (Button) findViewById(R.id.btnSelectAll);
 		seasonList = new ArrayList<HashMap<String, String>>();
 		lblShowName = (TextView) findViewById(R.id.showName);
 
@@ -79,6 +79,7 @@ public class EpisodeList extends ListActivity {
 		showTitle = i.getStringExtra("title");
     	Log.d("#######",showId);
     	Log.d("#######",showTitle);
+    	
     	
 		lblShowName.setText(showTitle);
 			
@@ -95,7 +96,10 @@ public class EpisodeList extends ListActivity {
 				Log.d("########",epTitle);
 				
 		    	{
-		    		db.execSQL("INSERT INTO shows VALUES('"+showTitle.replace("'","")+"','"+epTitle.replace("'","")+"');");
+		    		String dbShowTitle = showTitle.replace("'","");
+		    		String dbEpisodeTitle = epTitle.replace("'","");
+		    		
+		    		db.execSQL("INSERT INTO shows VALUES('"+dbShowTitle+"','"+dbEpisodeTitle+"');");
 		    		showMessage("Success!", "Record added!");
 		    	}				
 			}
@@ -117,7 +121,7 @@ public class GetEpisodes extends AsyncTask<Void, Void, Void> {
 		pDialog = new ProgressDialog(EpisodeList.this);
 		pDialog.setTitle("Downloading episodes list...");
 		pDialog.setMessage("Please wait...");
-		pDialog.setCancelable(true);
+		pDialog.setCancelable(false);
 		pDialog.show(); 
 	}
 	
@@ -220,8 +224,8 @@ public class GetEpisodes extends AsyncTask<Void, Void, Void> {
 	}
 
 	
-	public void viewAll(View view){
-    	if(view==btnViewAll)
+	public void selectAll(View view){
+    	if(view==btnSelectAll)
     	{
     		Cursor c=db.rawQuery("SELECT * FROM shows", null);
     		if(c.getCount()==0)

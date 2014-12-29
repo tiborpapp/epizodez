@@ -19,19 +19,19 @@
             android:textColor="#DC6920"/>
         
     <Button
-        android:id="@+id/btnViewAll"
+        android:id="@+id/btnSelectAll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:onClick="viewAll"
+        android:onClick="selectAll"
         android:text="@string/favorites" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:scaleType="centerInside"
    		android:adjustViewBounds="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+    	android:layout_height="70dp"
         android:layout_gravity="center"
         android:src="@drawable/ic_launcher" />
 
