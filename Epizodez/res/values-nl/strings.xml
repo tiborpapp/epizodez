@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="autoCompText">Voer Toon titel hier</string>
+  <string name="search">Zoeken</string>
+  <string name="favorites">Afleveringen gezien</string>
+  <string name="no_active_internet_connection_">Geen actieve internetverbinding!</string>
+  <string name="enable_wi_fi_connection_">Wi-Fi verbinding inschakelen?</string>
+  <string name="can_t_download_data_without_internet_connection_">Kan niet downloaden van gegevens zonder internetverbinding!</string>
+  <string name="cancel">Annuleren</string>
+  <string name="downloading_show_data_">Downloaden van gegevens weergeven...</string>
+  <string name="please_wait_">Een ogenblik geduld...</string>
+  <string name="enable">Inschakelen</string>
+  <string name="add">Toevoegen</string>
+  <string name="delete">Verwijderen</string>
+  <string name="success_">Succes!</string>
+  <string name="record_added_">Record toegevoegd!</string>
+  <string name="error">Fout</string>
+  <string name="no_records_were_found_">Geen records gevonden!</string>
+  <string name="list_of_seen_episodes">Lijst van gezien afleveringen van</string>
+</resources>

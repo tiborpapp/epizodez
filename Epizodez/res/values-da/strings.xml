@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="autoCompText">Angiv Vis titel her</string>
+  <string name="search">Søg</string>
+  <string name="favorites">Episoder set</string>
+  <string name="no_active_internet_connection_">Ingen aktiv internetforbindelse!</string>
+  <string name="enable_wi_fi_connection_">Aktiverer Wi-Fi-forbindelse?</string>
+  <string name="can_t_download_data_without_internet_connection_">Kan ikke hente data uden internetforbindelse!</string>
+  <string name="cancel">Annuller</string>
+  <string name="downloading_show_data_">Henter Vis data...</string>
+  <string name="please_wait_">Vent venligst...</string>
+  <string name="enable">Aktiverer</string>
+  <string name="add">Tilføje</string>
+  <string name="delete">Slet</string>
+  <string name="success_">Succes!</string>
+  <string name="record_added_">Post tilføjet!</string>
+  <string name="error">Fejl</string>
+  <string name="no_records_were_found_">Ingen poster blev fundet!</string>
+  <string name="list_of_seen_episodes">Liste over set episoder</string>
+</resources>

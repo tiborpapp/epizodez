@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="autoCompText">请输入在这里显示标题</string>
+  <string name="search">搜索</string>
+  <string name="favorites">看到的情节</string>
+  <string name="no_active_internet_connection_">没有活跃的互联网连接 ！</string>
+  <string name="enable_wi_fi_connection_">启用 Wi-Fi 连接吗？</string>
+  <string name="can_t_download_data_without_internet_connection_">不能下载没有互联网连接的数据 ！</string>
+  <string name="cancel">取消</string>
+  <string name="downloading_show_data_">正在下载数据显示...</string>
+  <string name="please_wait_">请稍候。。。</string>
+  <string name="enable">启用</string>
+  <string name="add">添加</string>
+  <string name="delete">删除</string>
+  <string name="success_">成功 ！</string>
+  <string name="record_added_">添加的记录 ！</string>
+  <string name="error">错误</string>
+  <string name="no_records_were_found_">找不到记录 ！</string>
+  <string name="list_of_seen_episodes">看到剧集列表</string>
+</resources>

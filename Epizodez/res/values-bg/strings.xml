@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="autoCompText">Моля въведете Покажи заглавие тук</string>
+  <string name="search">Търсене</string>
+  <string name="favorites">Епизоди виждал</string>
+  <string name="no_active_internet_connection_">Активни интернет връзка!</string>
+  <string name="enable_wi_fi_connection_">Давам възможност на Wi-Fi връзка?</string>
+  <string name="can_t_download_data_without_internet_connection_">Не може да изтегли данни без интернет връзка!</string>
+  <string name="cancel">Отказ</string>
+  <string name="downloading_show_data_">Изтегляне на шоуто данни...</string>
+  <string name="please_wait_">Моля, изчакайте...</string>
+  <string name="enable">Разреши</string>
+  <string name="add">Добавяне</string>
+  <string name="delete">Изтриване</string>
+  <string name="success_">Успех!</string>
+  <string name="record_added_">Запис добавя!</string>
+  <string name="error">Грешка</string>
+  <string name="no_records_were_found_">Не бяха открити записи!</string>
+  <string name="list_of_seen_episodes">Списък на наблюдавани епизоди</string>
+</resources>

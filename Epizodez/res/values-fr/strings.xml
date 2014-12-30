@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="autoCompText">Veuillez saisir le titre du spectacle ici</string>
+  <string name="search">Rechercher</string>
+  <string name="favorites">Épisodes vus</string>
+  <string name="no_active_internet_connection_">Aucune connexion Internet active !</string>
+  <string name="enable_wi_fi_connection_">Activez la connexion Wi-Fi ?</string>
+  <string name="can_t_download_data_without_internet_connection_">Peut pas télécharger de données sans connexion Internet !</string>
+  <string name="cancel">Annuler</string>
+  <string name="downloading_show_data_">Téléchargement d\'afficher les données...\'</string>
+  <string name="please_wait_">Veuillez patienter...</string>
+  <string name="add">Ajouter</string>
+  <string name="delete">Supprimer</string>
+  <string name="success_">Succès !</string>
+  <string name="record_added_">Enregistrement ajouté !</string>
+  <string name="error">Erreur</string>
+  <string name="no_records_were_found_">Aucun enregistrement n\'ont été trouvés !\'</string>
+  <string name="list_of_seen_episodes">Liste des épisodes de vus</string>
+</resources>

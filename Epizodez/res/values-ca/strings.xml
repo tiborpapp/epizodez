@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="autoCompText">Introduïu-Mostra el títol aquí</string>
+  <string name="search">Cerca</string>
+  <string name="favorites">Episodis vist</string>
+  <string name="no_active_internet_connection_">Cap connexió activa a Internet!</string>
+  <string name="enable_wi_fi_connection_">Permetre la connexió Wi-Fi?</string>
+  <string name="can_t_download_data_without_internet_connection_">No puc descarregar les dades sense connexió a Internet!</string>
+  <string name="downloading_show_data_">Descàrrega de dades de Mostra...</string>
+  <string name="please_wait_">Si us plau esperi...</string>
+  <string name="enable">Permetre</string>
+  <string name="add">Afegir</string>
+  <string name="delete">Suprimir</string>
+  <string name="success_">Èxit!</string>
+  <string name="record_added_">Registre afegit!</string>
+  <string name="no_records_were_found_">No hi ha registres es van trobar!</string>
+  <string name="list_of_seen_episodes">Llista d\'episodis vistos\'</string>
+</resources>

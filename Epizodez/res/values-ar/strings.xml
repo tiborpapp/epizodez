@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">ابيزوديز</string>
+  <string name="autoCompText">الرجاء إدخال عنوان المعرض هنا</string>
+  <string name="search">البحث</string>
+  <string name="favorites">شهدت الحلقات</string>
+  <string name="no_active_internet_connection_">لا يوجد اتصال نشط بالإنترنت!</string>
+  <string name="enable_wi_fi_connection_">تمكين الاتصال اللاسلكي؟</string>
+  <string name="can_t_download_data_without_internet_connection_">لا يمكن تحميل البيانات دون اتصال بالإنترنت!</string>
+  <string name="cancel">إلغاء الأمر</string>
+  <string name="downloading_show_data_">تحميل عرض البيانات...</string>
+  <string name="please_wait_">الرجاء الانتظار...</string>
+  <string name="enable">تمكين</string>
+  <string name="add">إضافة</string>
+  <string name="delete">حذف</string>
+  <string name="success_">النجاح!</string>
+  <string name="record_added_">تمت إضافة سجل!</string>
+  <string name="error">خطأ</string>
+  <string name="no_records_were_found_">تم العثور على أية سجلات!</string>
+  <string name="list_of_seen_episodes">قائمة الحلقات المشاهدة</string>
+</resources>

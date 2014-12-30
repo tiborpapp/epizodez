@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="autoCompText">Zadejte prosím název pořadu zde</string>
+  <string name="search">Hledat</string>
+  <string name="favorites">Epizody neviděl</string>
+  <string name="no_active_internet_connection_">Žádná aktivní připojení k Internetu!</string>
+  <string name="enable_wi_fi_connection_">Možnost připojení Wi-Fi?</string>
+  <string name="can_t_download_data_without_internet_connection_">Nelze stahovat data bez připojení k Internetu!</string>
+  <string name="cancel">Storno</string>
+  <string name="downloading_show_data_">Stahování zobrazit data...</string>
+  <string name="please_wait_">Počkejte prosím...</string>
+  <string name="enable">Povolit</string>
+  <string name="add">Přidat</string>
+  <string name="delete">Odstranit</string>
+  <string name="success_">Úspěch!</string>
+  <string name="record_added_">Přidaný záznam!</string>
+  <string name="error">Chyba</string>
+  <string name="no_records_were_found_">Nebyly nalezeny žádné záznamy!</string>
+  <string name="list_of_seen_episodes">Seznam epizod seriálu viděl</string>
+</resources>

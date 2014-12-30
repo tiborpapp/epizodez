@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="autoCompText">Palun sisestage Näita pealkiri siia</string>
+  <string name="search">Otsi hotelle</string>
+  <string name="favorites">Episoodi näinud</string>
+  <string name="no_active_internet_connection_">Ühtegi aktiivset internetiühendust!</string>
+  <string name="enable_wi_fi_connection_">Lubada WiFi ühendus?</string>
+  <string name="can_t_download_data_without_internet_connection_">Saate laadida andmed ilma internetiühendust!</string>
+  <string name="cancel">Loobu</string>
+  <string name="downloading_show_data_">Andmete allalaadimine...</string>
+  <string name="please_wait_">Oota...</string>
+  <string name="enable">Luba</string>
+  <string name="add">Lisamine</string>
+  <string name="delete">Kustuta</string>
+  <string name="success_">Edu!</string>
+  <string name="record_added_">Kirje lisada!</string>
+  <string name="error">Tõrge</string>
+  <string name="no_records_were_found_">Kirjeid ei leitud!</string>
+  <string name="list_of_seen_episodes">Näinud episoodide loetelu</string>
+</resources>
