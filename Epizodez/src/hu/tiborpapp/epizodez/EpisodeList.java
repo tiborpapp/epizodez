@@ -67,16 +67,17 @@ public class EpisodeList extends ListActivity {
 
         db=openOrCreateDatabase("ShowsDB", Context.MODE_PRIVATE, null);
 		db.execSQL("CREATE TABLE IF NOT EXISTS shows(showname VARCHAR, epname VARCHAR);");
-	    
+		
 		Intent i = getIntent();
+		
+		showId = i.getStringExtra("showID");
+		showTitle = i.getStringExtra("title");
 			
 		btnStart = (Button) findViewById(R.id.btnStart);	
 		btnSelectAll = (Button) findViewById(R.id.btnSelectAll);
 		seasonList = new ArrayList<HashMap<String, String>>();
 		lblShowName = (TextView) findViewById(R.id.showName);
-
-		showId = i.getStringExtra("showID");
-		showTitle = i.getStringExtra("title");
+		
     	Log.d("#######",showId);
     	Log.d("#######",showTitle);
     	
@@ -98,9 +99,10 @@ public class EpisodeList extends ListActivity {
 		    	{
 		    		String dbShowTitle = showTitle.replace("'","");
 		    		String dbEpisodeTitle = epTitle.replace("'","");
-		    		
-		    		db.execSQL("INSERT INTO shows VALUES('"+dbShowTitle+"','"+dbEpisodeTitle+"');");
-		    		showMessage("Success!", "Record added!");
+
+					db.execSQL("INSERT INTO shows VALUES('" + dbShowTitle
+							+ "','" + dbEpisodeTitle + "');");
+					showMessage(getString(R.string.success_), getString(R.string.record_added_));
 		    	}				
 			}
 		});
@@ -119,8 +121,8 @@ public class GetEpisodes extends AsyncTask<Void, Void, Void> {
 	protected void onPreExecute() {
 		super.onPreExecute();
 		pDialog = new ProgressDialog(EpisodeList.this);
-		pDialog.setTitle("Downloading episodes list...");
-		pDialog.setMessage("Please wait...");
+		pDialog.setTitle(R.string.downloading_show_data_);
+		pDialog.setMessage(getString(R.string.please_wait_));
 		pDialog.setCancelable(false);
 		pDialog.show(); 
 	}
@@ -224,22 +226,19 @@ public class GetEpisodes extends AsyncTask<Void, Void, Void> {
 	}
 
 	
-	public void selectAll(View view){
-    	if(view==btnSelectAll)
-    	{
-    		Cursor c=db.rawQuery("SELECT * FROM shows", null);
-    		if(c.getCount()==0)
-    		{
-    			showMessage("Error", "No records were found!");
-    			return;
-    		}
-    		StringBuffer buffer=new StringBuffer();
-    		while(c.moveToNext())
-    		{
-    			buffer.append(c.getString(0)+ ": " + c.getString(1)+"\n");
-    		}
-    		showMessage("List of seen episodes", buffer.toString());
-    	}
+	public void selectAll(View view) {
+		if (view == btnSelectAll) {
+			Cursor c = db.rawQuery("SELECT * FROM shows", null);
+			if (c.getCount() == 0) {
+				showMessage(getString(R.string.error), getString(R.string.no_records_were_found_));
+				return;
+			}
+			StringBuffer buffer = new StringBuffer();
+			while (c.moveToNext()) {
+				buffer.append(c.getString(0) + ": " + c.getString(1) + "\n");
+			}
+			showMessage(getString(R.string.list_of_seen_episodes), buffer.toString());
+		}
 	}
 	
 }

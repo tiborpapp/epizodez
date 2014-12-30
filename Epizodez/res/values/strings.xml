@@ -5,5 +5,19 @@
     <string name="autoCompText">Please enter show title here</string>
     <string name="search">Search</string>
     <string name="favorites">Episodes Seen</string>
+    <string name="no_active_internet_connection_">No active Internet connection!</string>
+    <string name="enable_wi_fi_connection_">Enable Wi-Fi connection?</string>
+    <string name="can_t_download_data_without_internet_connection_">Can not download data without Internet connection!</string>
+    <string name="cancel">Cancel</string>
+    <string name="downloading_show_data_">Downloading show data...</string>
+    <string name="please_wait_">Please wait...</string>
+    <string name="enable">Enable</string>
+    <string name="add">Add</string>
+    <string name="delete">Delete</string>
+    <string name="success_">Success!</string>
+    <string name="record_added_">Record added!</string>
+    <string name="error">Error</string>
+    <string name="no_records_were_found_">No records were found!</string>
+    <string name="list_of_seen_episodes">List of seen episodes</string>
 
 </resources>

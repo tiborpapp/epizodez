@@ -79,12 +79,13 @@ public class MainActivity extends ListActivity {
         mgr.hideSoftInputFromWindow(btnStart.getWindowToken(),0);
         
         
-        // invoking startSearch() method + hiding the keyboard
+		// invoking startSearch() method + hiding the keyboard
 		btnStart.setOnClickListener(new View.OnClickListener() {
-				
+
 			public void onClick(View v) {
 				startSearch(v);
-				InputMethodManager mgr = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+				InputMethodManager mgr = (InputMethodManager) 
+						getSystemService(Context.INPUT_METHOD_SERVICE);
 				mgr.hideSoftInputFromWindow(btnStart.getWindowToken(), 0);
 			}
 		});
@@ -105,9 +106,9 @@ public class MainActivity extends ListActivity {
 			
 		// invoking txtReadIn() method to use for AutoCompleteTextView
 		txtReadIn();
-		
+
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-									   android.R.layout.simple_expandable_list_item_1, stringArray);
+				android.R.layout.simple_expandable_list_item_1, stringArray);
 		autoCompTV.setAdapter(adapter);
 		
 		lv = getListView();
@@ -115,19 +116,19 @@ public class MainActivity extends ListActivity {
 		// adding Context menu option
 		registerForContextMenu(lv);
 
-
-		// Listview on item click listener
+		// setting ListView on item click listener
 		lv.setOnItemClickListener(new OnItemClickListener() {
 
-			
-			// passing the selected show's ID to another activity 
+			// passing the selected show's ID to another activity
 			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
 
-				Intent in = new Intent(getApplicationContext(), EpisodeList.class);
+				Intent in = new Intent(getApplicationContext(),
+						EpisodeList.class);
 
 				HashMap<String, String> pass = showList.get(position);
-				String showID = pass.get("showid"); 
+				String showID = pass.get("showid");
 				String title = pass.get("name");
 
 				in.putExtra("showID", showID);
@@ -148,37 +149,26 @@ public class MainActivity extends ListActivity {
     		menu.setHeaderTitle(headerTitle);
     		
     		// Context menu pop-up - not working yet
-    		String[] menuItems = new String[] {"Add","Delete"}; 
+    		String[] menuItems = new String[] 
+    				{getResources().getString(R.string.add),
+    				getResources().getString(R.string.delete)}; 
     		for (int i = 0; i<menuItems.length; i++) {
     			menu.add(Menu.NONE, i, i, menuItems[i]);
 			}
     	}
     }
     	
-	// not working yet !!!!
-//    @Override
-//    public boolean onContextItemSelected(MenuItem item) {
-//	    AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
-//	    int menuItemIndex = item.getItemId();
-//		String[] menuItems = getResources().getStringArray(R.array.menu);
-//		String menuItemName = menuItems[menuItemIndex];
-//	    String listItemName = Countries[info.position];
-//	    
-//	    TextView text = (TextView)findViewById(R.id.footer);
-//	    text.setText(String.format("Selected %s for item %s", menuItemName, listItemName));
-//    	return true;
-//    }
 	
 	public void startSearch(View view) {
 		// Calling AsyncTask in order to get XML
 
 		if (!isNetworkAvailable(this)) {
-			Toast.makeText(this, "No active Internet connection!", Toast.LENGTH_LONG).show();
+			Toast.makeText(this, R.string.no_active_internet_connection_, Toast.LENGTH_LONG).show();
 			AlertDialog.Builder alert = new AlertDialog.Builder(this);
-			alert.setTitle("Enable Wi-Fi connection?");
-			alert.setMessage("Can't fetch data without Internet connection!");
+			alert.setTitle(R.string.enable_wi_fi_connection_);
+			alert.setMessage(R.string.can_t_download_data_without_internet_connection_);
 
-			alert.setPositiveButton("Enable",
+			alert.setPositiveButton(R.string.enable,
 					new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog, int whichButton) {
 
@@ -191,7 +181,7 @@ public class MainActivity extends ListActivity {
 						}
 					});
 
-			alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+			alert.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog,int whichButton) {
 							return;
 						}
@@ -218,10 +208,11 @@ public class MainActivity extends ListActivity {
 			super.onPreExecute();
 			// Showing progress dialog
 			pDialog = new ProgressDialog(MainActivity.this);
-			pDialog.setTitle("Downloading show data...");
-			pDialog.setMessage("Please wait...");
+			pDialog.setTitle(R.string.downloading_show_data_);
+			pDialog.setMessage(getResources().getString(R.string.please_wait_));
 			pDialog.setCancelable(false);
-			pDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel",
+			pDialog.setButton(DialogInterface.BUTTON_NEGATIVE, 
+					getResources().getString(R.string.cancel),
 					new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
@@ -296,12 +287,12 @@ public class MainActivity extends ListActivity {
 			// Dismiss the progress dialog
 			if (pDialog.isShowing())
 				pDialog.dismiss();
-			
-			
+
 			// Updating parsed XML data into ListView
-			ListAdapter adapter = new SimpleAdapter(MainActivity.this, showList, R.layout.list_item, new String[] { XML_SHOWNAME, XML_STATUS, 
-					XML_SEASONS, XML_STARTED }, new int[] { R.id.name,R.id.airdate, R.id.seasonno, R.id.epno});
-			
+			ListAdapter adapter = new SimpleAdapter(MainActivity.this,
+					showList, R.layout.list_item, new String[] { XML_SHOWNAME,
+							XML_STATUS, XML_SEASONS, XML_STARTED }, new int[] {
+							R.id.name, R.id.airdate, R.id.seasonno, R.id.epno });
 			setListAdapter(adapter);
 		}
 	}
@@ -312,14 +303,16 @@ public class MainActivity extends ListActivity {
 			String str = "";
 			StringBuffer buffer = new StringBuffer();
 			InputStream inputStream = assetMan.open("serieslist.txt");
-			BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(
+					inputStream));
 			if (inputStream != null) {
 				while ((str = reader.readLine()) != null) {
 					buffer.append(str + "\n");
 				}
 			}
 			inputStream.close();
-			stringArray = buffer.toString().split("[\\r\\n]"); // split to new line
+			stringArray = buffer.toString().split("[\\r\\n]"); // split into new
+																// line
 
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -327,8 +320,10 @@ public class MainActivity extends ListActivity {
 	}
 
 	public static boolean isNetworkAvailable(Context context) {
-		ConnectivityManager connMan = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-		if (connMan.getActiveNetworkInfo() != null && connMan.getActiveNetworkInfo().isConnected())
+		ConnectivityManager connMan = (ConnectivityManager) context
+				.getSystemService(Context.CONNECTIVITY_SERVICE);
+		if (connMan.getActiveNetworkInfo() != null
+				&& connMan.getActiveNetworkInfo().isConnected())
 			return true;
 		else
 			return false;
