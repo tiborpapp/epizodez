@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Epizodez</string>
+    <string name="autoCompText">Kérem, írja ide	a sorozat nevét</string>
+    <string name="search">Keresés</string>
+    <string name="favorites">Megtekintett epizódok</string>
+    <string name="no_active_internet_connection_">Nincs Internet-kapcsolat!</string>
+    <string name="enable_wi_fi_connection_">Engedélyezi a Wi-Fit?</string>
+    <string name="can_t_download_data_without_internet_connection_">Az adatok nem elérhetőek Internet-kapcsolat nélkül!</string>
+    <string name="cancel">Mégse</string>
+    <string name="downloading_show_data_">Sorozat-adatok letöltése...</string>
+    <string name="please_wait_">Kérem, várjon...</string>
+    <string name="enable">Engedélyez</string>
+    <string name="add">Hozzáad</string>
+    <string name="delete">Töröl</string>
+    <string name="success_">Sikerült!</string>
+    <string name="record_added_">Rekord hozzáadva!</string>
+    <string name="error">Hiba</string>
+    <string name="no_records_were_found_">Nincs elérhető rekord!</string>
+    <string name="list_of_seen_episodes">Megtekintett epizódok listája</string>
+
+</resources>

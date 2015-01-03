@@ -9,12 +9,19 @@ import android.util.Log;
 import android.widget.ImageView;
 
 public class ImageDownloader extends AsyncTask<String, Void, Bitmap> {
-	ImageView bmImage;
+	ImageView imageView;
 
+	/**
+	 * Constructor of ImageDownloader.
+	 */
 	public ImageDownloader(ImageView bmImage) {
-		this.bmImage = bmImage;
+		this.imageView = bmImage;
 	}
 
+	
+	/**
+	 * Downloads the image from the given URL.
+	 */
 	protected Bitmap doInBackground(String... urls) {
 		String urldisplay = urls[0];
 		Bitmap bitm = null;
@@ -28,7 +35,10 @@ public class ImageDownloader extends AsyncTask<String, Void, Bitmap> {
 		return bitm;
 	}
 
+	/**
+	 * Sets the result Bitmap as content of ImageView.
+	 */
 	protected void onPostExecute(Bitmap result) {
-		bmImage.setImageBitmap(result);
+		imageView.setImageBitmap(result);
 	}
 }

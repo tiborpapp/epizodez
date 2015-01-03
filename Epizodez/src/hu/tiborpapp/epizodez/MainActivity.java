@@ -49,6 +49,7 @@ public class MainActivity extends ListActivity {
 	private AutoCompleteTextView autoCompTV;
 	private ListView lv;
 	private String stringArray[] = null;
+	private final static String TAG = MainActivity.class.getName();
 	private InputMethodManager mgr;
 	
 	// URL to get XML - working link
@@ -63,6 +64,9 @@ public class MainActivity extends ListActivity {
 	private static final String XML_STARTED = "started";
 	private static final String XML_SEASONS = "seasons";
 	private static final String XML_STATUS = "status";
+	
+	
+	
 	
 	// Hashmap for ListView
 	ArrayList<HashMap<String, String>> showList;
@@ -158,7 +162,10 @@ public class MainActivity extends ListActivity {
     	}
     }
     	
-	
+	/**
+	 * Makes an instance of GetData AsyncTask and invokes its execute() method, if there's available Internet connection.
+	 * @param view
+	 */
 	public void startSearch(View view) {
 		// Calling AsyncTask in order to get XML
 
@@ -203,6 +210,7 @@ public class MainActivity extends ListActivity {
 	 * */
 	public class GetData extends AsyncTask<Void, Void, Void> {
 
+		
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
@@ -222,6 +230,9 @@ public class MainActivity extends ListActivity {
 			pDialog.show();
 		}
 
+		/**
+		 * Downloads the searched TV-shows XML file and puts the results into a HashList.
+		 */
 		@Override
 		protected Void doInBackground(Void... arg0) {
 
@@ -232,7 +243,7 @@ public class MainActivity extends ListActivity {
 			final String finalURL = url1 + url2;
 
 			String response = sh.makeServiceCall(finalURL, ServiceHandler.GET);
-			Log.d("#RESPONSE#", response);
+			Log.d(TAG, response);
 
 			try {
 
@@ -260,16 +271,16 @@ public class MainActivity extends ListActivity {
 
 					// TEST
 					String teszt2 = nl.toString();
-					Log.d("&&&&&&&", teszt2);
+					Log.d(TAG, teszt2);
 					
 					
 					// adding HashList to ArrayList
 					showList.add(xmlItems);
 				}
 				// TEST
-				Log.d("URL", url2);
-				Log.d("finalURL", finalURL);
-				Log.d("Response: ", response);
+				Log.d(TAG, url2);
+				Log.d(TAG, finalURL);
+				Log.d(TAG + " response: ", response);
 
 			}
 
@@ -297,6 +308,10 @@ public class MainActivity extends ListActivity {
 		}
 	}
 	
+	/**
+	 * Reads the serieslist.txt into a String array.
+	 * 
+	 */
 	public void txtReadIn() {
 		AssetManager assetMan = this.getAssets();
 		try {
@@ -319,14 +334,14 @@ public class MainActivity extends ListActivity {
 		}
 	}
 
+	/*
+	 * Checks whether there is an Internet connection available.
+	 */
 	public static boolean isNetworkAvailable(Context context) {
 		ConnectivityManager connMan = (ConnectivityManager) context
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
-		if (connMan.getActiveNetworkInfo() != null
-				&& connMan.getActiveNetworkInfo().isConnected())
-			return true;
-		else
-			return false;
+		return connMan.getActiveNetworkInfo() != null
+				&& connMan.getActiveNetworkInfo().isConnected();
 	}
 
 }
